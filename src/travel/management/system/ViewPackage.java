@@ -10,8 +10,11 @@ import javax.swing.*;
 public class ViewPackage extends JFrame implements ActionListener {
     
     JButton back;
+    String username;
     
     ViewPackage(String username){
+        
+        this.username = username;
         setBounds(420, 150, 750, 400);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -117,6 +120,6 @@ public class ViewPackage extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args){
-        new ViewPackage("red");
+        new ViewPackage("");
     }
 }

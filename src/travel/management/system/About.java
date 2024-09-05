@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 public class About extends JFrame implements ActionListener {
     
-    About(){
+    public About(){
         setBounds(500, 100, 500, 550);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);

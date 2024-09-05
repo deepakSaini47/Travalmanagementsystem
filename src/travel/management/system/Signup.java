@@ -11,7 +11,7 @@ public class Signup extends JFrame implements ActionListener{
     JTextField tfname, tfusername, tfpassword, tfanswer;
     Choice security;
     
-    Signup(){
+    public Signup(){
         setBounds(250, 150, 800, 400);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);

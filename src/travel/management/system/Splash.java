@@ -6,7 +6,7 @@ import java.awt.*;
 public class Splash extends JFrame implements Runnable{
     Thread thread;
     
-    Splash(){
+    public Splash(){
 //        setSize(1200, 600);
 //        setLocation(50, 25);
         

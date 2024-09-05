@@ -197,7 +197,7 @@ public class BookHotel extends JFrame implements ActionListener {
                         total += foodselected.equals("Yes") ? food : 0;
                         total += cost;
                         total += total * persons * days;
-                        labelprice.setText("Rs"+total);
+                        labelprice.setText("Rs "+total);
                     } else{
                         JOptionPane.showMessageDialog(null, "Please Enter a Valid Number");
                     }
@@ -221,6 +221,6 @@ public class BookHotel extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new BookHotel("red");
+        new BookHotel("");
     }
 }

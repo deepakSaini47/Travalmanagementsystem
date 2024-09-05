@@ -9,8 +9,10 @@ import java.awt.event.*;
 public class ViewCustomer extends JFrame implements ActionListener{
     
     JButton back;
+    String username;
     
     ViewCustomer(String username){
+        this.username = username;
         setBounds(400, 150, 750, 500);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -136,6 +138,6 @@ public class ViewCustomer extends JFrame implements ActionListener{
     }
     
     public static void main(String[] args){
-        new ViewCustomer("red");
+        new ViewCustomer("");
     }
 }

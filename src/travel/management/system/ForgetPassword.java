@@ -11,7 +11,7 @@ public class ForgetPassword extends JFrame implements ActionListener{
     JTextField tfusername, tfname, tfquestion, tfanswer, tfpassword;
     JButton search, retrieve, back;
     
-    ForgetPassword(){
+    public ForgetPassword(){
         setBounds(250, 150, 800, 400); 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -82,7 +82,7 @@ public class ForgetPassword extends JFrame implements ActionListener{
         retrieve.addActionListener(this);
         p1.add(retrieve);
         
-        JLabel lblpassword = new JLabel("Answer");
+        JLabel lblpassword = new JLabel("Password");
         lblpassword.setBounds(40, 180, 150, 25);
         lblpassword.setFont(new Font("Tahoma", Font.BOLD, 14));
         p1.add(lblpassword);
@@ -123,7 +123,7 @@ public class ForgetPassword extends JFrame implements ActionListener{
                
                ResultSet rs = c.s.executeQuery(query);
                while(rs.next()){
-                   tfpassword.setText(rs.getString("name"));
+                   tfpassword.setText(rs.getString("password"));
                }
             }catch(Exception e){
                 e.printStackTrace();

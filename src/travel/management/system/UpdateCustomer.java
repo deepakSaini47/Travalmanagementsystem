@@ -1,4 +1,3 @@
-
 package travel.management.system;
 
 import java.awt.*;
@@ -7,17 +6,19 @@ import java.sql.*;
 import javax.swing.*;
 
 public class UpdateCustomer extends JFrame implements ActionListener {
-    JLabel labelusername, labelname;
-    JComboBox comboid;
-    JTextField tfnumber, tfcountry, tfaddress, tfemail, tfphone, tfid, tfgender;
-    JRadioButton rmale, rfemale;
-    JButton add, back;
 
-    UpdateCustomer(String username) {
+    JLabel labelusername, labelname;
+    JTextField tfnumber, tfcountry, tfaddress, tfemail, tfphone, tfid, tfgender;
+    JButton add, back;
+    String username;
+
+    public UpdateCustomer(String username) {
+        
+        this.username = username;
         setBounds(350, 150, 700, 450);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
-        
+
         JLabel text = new JLabel("UPDATE CUSTOMER DETAILS");
         text.setBounds(60, 0, 300, 25);
         text.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -34,7 +35,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         JLabel lblid = new JLabel("Id");
         lblid.setBounds(25, 70, 150, 25);
         add(lblid);
-        
+
         tfid = new JTextField();
         tfid.setBounds(220, 70, 150, 25);
         add(tfid);
@@ -118,7 +119,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
         try {
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
+            ResultSet rs = c.s.executeQuery("select * from customer where username = '" + username + "'");
             while (rs.next()) {
                 labelusername.setText(rs.getString("username"));
                 labelname.setText(rs.getString("name"));
@@ -133,10 +134,9 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         setVisible(true);
     }
-    
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == add) {
@@ -149,23 +149,23 @@ public class UpdateCustomer extends JFrame implements ActionListener {
             String address = tfaddress.getText();
             String phone = tfphone.getText();
             String email = tfemail.getText();
-            
-            try{
+
+            try {
                 Conn c = new Conn();
-                String query = "update customer set username='"+username+"', id = '"+id+"', number = '"+number+"', name = '"+name+"', gender = '"+gender+"', country = '"+country+"', address = '"+address+"', phone = '"+phone+"', email = '"+email+"'";
+                String query = "update customer set username='" + username + "', id = '" + id + "', number = '" + number + "', name = '" + name + "', gender = '" + gender + "', country = '" + country + "', address = '" + address + "', phone = '" + phone + "', email = '" + email + "'";
                 c.s.executeUpdate(query);
-                
-                JOptionPane.showMessageDialog(null, "Customer Deatails Updat1ed Successfully");
+
+                JOptionPane.showMessageDialog(null, "Customer Deatails Updated Successfully");
                 setVisible(false);
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
             setVisible(false);
         }
     }
-    
-    public static void main(String[] args){
-        new UpdateCustomer("red");
+
+    public static void main(String[] args) {
+        new UpdateCustomer("");
     }
 }

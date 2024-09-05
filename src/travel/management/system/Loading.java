@@ -28,7 +28,7 @@ public class Loading extends JFrame implements Runnable{
             e.printStackTrace();
         }
     }
-    Loading(String username){
+    public Loading(String username){
         this.username = username;
         t = new Thread(this);
         setBounds(400, 150, 600, 350);

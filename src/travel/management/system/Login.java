@@ -13,7 +13,7 @@ public class Login extends JFrame implements ActionListener{
     JButton login, signup, password;
     JTextField tfpassword, tfusername;
     
-    Login(){
+    public Login(){
         setSize(800, 400);
         setLocation(250, 150);
         setLayout(null);

@@ -9,7 +9,7 @@ public class Payment extends JFrame implements ActionListener{
     
     JButton pay, back;
     
-    Payment(){
+    public Payment(){
         setBounds(400, 150, 800, 500);
         setLayout(null);
         

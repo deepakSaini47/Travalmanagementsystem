@@ -10,8 +10,10 @@ import javax.swing.*;
 public class ViewBookedHotel extends JFrame implements ActionListener {
     
     JButton back;
+    String username;
     
-    ViewBookedHotel(String username){
+    public ViewBookedHotel(String username){
+        this.username = username;
         setBounds(320, 150, 800, 500);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -93,7 +95,7 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
         labelphone.setBounds(220, 360, 150, 25);
         add(labelphone);
         
-         JLabel lbladdress = new JLabel("Total Cost");
+        JLabel lbladdress = new JLabel("Total Cost");
         lbladdress.setBounds(25, 400, 150, 25);
         add(lbladdress);
         
@@ -124,12 +126,12 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
                 labelid.setText(rs.getString("id"));
                 labelnumber.setText(rs.getString("number"));
                 labelpackage.setText(rs.getString("name"));
-                labelprice.setText(rs.getString("price"));
                 labelphone.setText(rs.getString("phone"));
                 labelpersons.setText(rs.getString("persons"));
                 labelfood.setText(rs.getString("food"));
                 labelac.setText(rs.getString("ac"));
                 labeldays.setText(rs.getString("days"));
+                labelprice.setText(rs.getString("price"));
             }
             
         }catch(Exception e){
@@ -144,6 +146,6 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args){
-        new ViewBookedHotel("red");
+        new ViewBookedHotel("");
     }
 }

@@ -24,7 +24,7 @@ public class CheckHotels extends JFrame implements Runnable{
         }
     }
 
-    CheckHotels() {
+    public CheckHotels() {
         setBounds(350, 150, 650, 450);
         
         caption = new JLabel();

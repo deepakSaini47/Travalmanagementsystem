@@ -12,8 +12,10 @@ public class AddCustomer extends JFrame implements ActionListener {
     JTextField tfnumber, tfcountry, tfaddress, tfemail, tfphone;
     JRadioButton rmale, rfemale;
     JButton add, back;
+    String username;
 
     AddCustomer(String username) {
+        this.username = username;
         setBounds(350, 150, 700, 450);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
@@ -170,6 +172,6 @@ public class AddCustomer extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args){
-        new AddCustomer("red");
+        new AddCustomer("");
     }
 }

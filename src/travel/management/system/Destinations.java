@@ -24,7 +24,7 @@ public class Destinations extends JFrame implements Runnable{
         }
     }
 
-    Destinations() {
+    public Destinations() {
         setBounds(350, 150, 650, 450);
         
         caption = new JLabel();
